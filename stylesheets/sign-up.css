@@ -1,0 +1,77 @@
+body{
+  background-image: url("../imgs/signup-desktop.png");
+}
+.signup-container{
+  width:40%;
+
+  background-color: #0F0F0F;
+  border:solid;
+  border-color: white;
+  border-radius: 40px;
+  border-width: 1px;
+  gap:2rem;
+  padding-block: 2rem;
+}
+.sign-in-title{
+  color:white;
+  font-weight: bolder;
+}
+.signup-password-input,
+.signup-email-input{
+  color:white;
+  width:70%;
+  align-self: center;
+  background-color: #0F0F0F;
+  border:solid;
+  border-color: white;
+  border-radius: 12px;
+  border-width: 1px;
+  padding:1rem;
+  outline: none;
+}
+.sign-up-button{
+  width:6rem;
+  height:2.5rem;
+  align-self: center;
+
+  border:none;
+  border-radius: 6px;
+}
+.sign-in-paragraph{
+  color:white;
+  font-weight: bolder;
+}
+
+
+
+
+@media(max-width:992px){
+  .signup-container{
+    width:70%;
+  }
+}
+@media(max-width:576px){
+  .signup-container{
+    width:100%;
+    border-radius: 22px;
+    padding-block:3rem;
+    
+  }
+  .signup-password-input,
+  .signup-email-input{
+    width:75%;
+    border-radius: 0;
+  }
+  .sign-in-button{
+    color:black;
+  }
+  .sign-in-paragraph{
+    font-size:80%;
+  }
+}
+
+@media(max-height:545px){
+  .signup-container{
+    gap: 1rem;
+  }
+}

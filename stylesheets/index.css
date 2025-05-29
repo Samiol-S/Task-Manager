@@ -1,0 +1,153 @@
+body{
+  background-image: url('../imgs/main-desktop.png');
+
+}
+
+.main-header{
+  min-height:60px;
+  height:15vh
+}
+.logout-button{
+  font-family: "El Messiri", sans-serif;
+  font-weight:bold;
+  border:none;
+  border-radius: 27px;
+}
+
+
+.ytl{
+  font-family: "El Messiri", sans-serif;
+  font-weight: bold;
+  color:white;
+  margin:0;
+  font-size:4.5rem;
+}
+.todo-container{
+  overflow: scroll;
+  overflow-x: hidden;
+  max-width:65%;
+  max-height:40vh;
+}
+.js-input-todo{
+  overflow:auto;
+}
+@media (max-width: 576px) {
+  .ytl{
+    font-size:3rem;
+    margin-bottom:1rem;
+  }
+  #main-header{
+    background-color: #1C1C1C;
+  }
+  .main-header{
+    height:8vh;
+  }
+  .logout-button{
+    color:black;
+  }
+  .todo-container{
+    width:100%;
+    max-width: none;
+  }
+  .todo-text{
+    max-width: 8rem;
+    overflow-wrap:break-word;
+  }
+}  
+#todo-input{
+  font-family: "Abel", sans-serif;
+  color:#9B9B9B;
+  background-color: #1C1C1C;
+  border:none;
+  outline: none;
+}
+#add-button-container{
+  background-color: #1C1C1C;
+}
+#add-button{
+  background-color: #1C1C1C;
+  color:white;
+}
+.todo:hover{
+  scale:1.03;
+  transition: scale 0.3s;
+}
+.todo{
+  transition: scale 0.3s;
+
+  background-color: #1C1C1C;
+  margin-bottom:0.5rem;
+}
+.todo-text{
+  color:#9B9B9B;
+  font-family: "El Messiri", sans-serif;
+}
+
+/* this code under there .. is for the costum checkbox : */ 
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor:pointer;
+}
+
+
+.custom-checkbox .checkmark {
+  width: 18px;
+  height: 18px;
+  background: #1C1C1C; 
+  border: 1px solid #9B9B9B; 
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  
+}
+
+
+.custom-checkbox .checkmark:after {
+  content: "✓";
+  color: #9B9B9B; 
+  font-size: 12px;
+  display: none;
+}
+
+
+.custom-checkbox input:checked + .checkmark:after {
+  display: block;
+}
+
+
+.custom-checkbox:hover .checkmark {
+  border-color: #C0C0C0; 
+}
+.custom-checkbox input:checked + .checkmark {
+  border-color: #C0C0C0;
+}
+
+::-webkit-scrollbar{
+  background-color: transparent;
+  width:5px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgb(70, 70, 70);
+  
+}
+.delete-button{
+  background-color: #1C1C1C;
+  color:#9B9B9B;
+  border:solid;
+  border-color: #9B9B9B;
+  border-radius: 60px;
+  width:2rem;
+  height: 2rem;
+  padding-bottom: 1rem;
+}

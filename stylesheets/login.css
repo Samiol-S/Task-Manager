@@ -1,0 +1,120 @@
+body{
+  background-image: url("../imgs/login.png");
+}
+.welcome{
+  color:white;
+  font-family: "Abel", sans-serif;
+  font-size:2rem;
+  align-self: flex-start;
+  
+}
+.name{
+  color:white;
+  font-family: "Electrolize", sans-serif;
+  font-size:4rem;
+}
+.whole-container{
+  height:75vh;
+  flex-direction: row;
+  margin-top:6rem;
+}
+.text-container{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.vertical-line{
+  width:1px;
+  height:30vh;
+  background-color: rgb(137, 137, 137);
+}
+.sign-in-title{
+  color:white;
+  font-weight: bolder;
+}
+
+.login-container{
+  width:70%;
+
+  background-color: #0F0F0F;
+  border:solid;
+  border-color: white;
+  border-radius: 40px;
+  border-width: 1px;
+  gap:2rem;
+  padding-block: 2rem;
+}
+.login-password-input,
+.login-email-input{
+  color:white;
+  width:70%;
+  align-self: center;
+  background-color: #0F0F0F;
+  border:solid;
+  border-color: white;
+  border-radius: 12px;
+  border-width: 1px;
+  padding:1rem;
+  outline: none;
+}
+.sign-in-button{
+  width:6rem;
+  height:2.5rem;
+  align-self: center;
+
+  border:none;
+  border-radius: 6px;
+}
+.sign-up-paragraph{
+  color:white;
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:576px){
+  .name{
+    font-size:2.3rem;
+  }
+  .login-container{
+    width:100%;
+    border-radius: 22px;
+    padding-block:3rem;
+    
+  }
+  .welcome{
+    font-size:2rem
+  }
+  .login-password-input,
+  .login-email-input{
+    width:75%;
+    border-radius: 0;
+  }
+  .sign-up-paragraph{
+    font-size:80%;
+  }
+  .sign-in-button{
+    color:black;
+  }
+}
+@media(max-width:992px) {
+  .whole-container{
+    flex-direction: column;
+  }
+  .welcome,.name{
+    text-align:center;
+  }
+}
+@media(max-height:545px){
+  .login-container{
+    gap: 1rem;
+  }
+}
