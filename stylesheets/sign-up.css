@@ -16,6 +16,7 @@ body{
   color:white;
   font-weight: bolder;
 }
+.signup-name-input,
 .signup-password-input,
 .signup-email-input{
   color:white;
