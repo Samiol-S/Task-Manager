@@ -7,26 +7,41 @@ function signUp() {
   const name = upName.value;
   const email = upMail.value;
   const password = upPass.value;
+  if (upMail.checkValidity() && password.length >=8) {
+      const signUpPromise = fetch('https://sam-task-manager.srv656652.hstgr.cloud/auth/signup', {
+        method:"POST",
+        body:JSON.stringify({
+          name: name,
+          email: email,
+          password: password
+        }),
+        headers: {"Content-Type": "application/json"}
+      });
+      signUpPromise.then((response) => {
+        return response.json();
+      }).then((json) => {
+        if (json.status === true) {
+          alert('Account Created Successfully, Please Sign In to your account!')
+        }
+        else {
+          alert('there has been an error creating your account :(')
+        }
+      })
+     } 
 
-  const signUpPromise = fetch('https://sam-task-manager.srv656652.hstgr.cloud/auth/signup', {
-    method:"POST",
-    body:JSON.stringify({
-      name: name,
-      email: email,
-      password: password
-    }),
-    headers: {"Content-Type": "application/json"}
-  });
-  signUpPromise.then((response) => {
-    return response.json();
-  }).then((json) => {
-    if (json.status === true) {
-      alert('Account Created Successfully, Please Sign In to your account!')
+  else{
+    if(!upMail.checkValidity()){
+      alert('only @gmail.com is accepted');
     }
     else {
-      alert('there has been an error creating your account :(')
+      alert('password must be at least 8 characters long');
     }
-  })
+    
+    
+  }
+  
+
+  
 }
 
 const SignUpButton = document.querySelector('.sign-up-button');
