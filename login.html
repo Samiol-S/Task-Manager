@@ -42,11 +42,17 @@
 
         <input class="login-email-input" type="text" placeholder="Enter Your Email ...">
         <input class="login-password-input" type="password" placeholder=" Enter Your Password ... ">
-
-        <button class="sign-in-button mt-4">Sign In</button>
+        <div class="mt-4 d-flex justify-content-center align-items-center">
+          <button class="sign-in-button me-2">Sign In</button>
+          <div class="loader-container">
+            <div class="loader d-none"></div>
+          </div>
+        </div>
+        
+        <span class="not-valid errorParagraph text-center d-none">Error: This Account Doesn't Exist !!</span>
 
         <p class="sign-up-paragraph text-center">Don't have an account?, <a href="sign-up.html" class="sign-up-button">Sign Up</a> for free !</p>
-
+        
       </div>
     </div>
     

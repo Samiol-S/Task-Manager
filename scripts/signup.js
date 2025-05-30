@@ -4,6 +4,8 @@ const upMail = document.querySelector('.signup-email-input');
 const upPass = document.querySelector('.signup-password-input');
 
 function signUp() {
+  const loader = document.querySelector('.loader');
+  loader.classList.toggle('d-none');
   const name = upName.value;
   const email = upMail.value;
   const password = upPass.value;
@@ -21,22 +23,20 @@ function signUp() {
         return response.json();
       }).then((json) => {
         if (json.status === true) {
-          alert('Account Created Successfully, Please Sign In to your account!')
+          const successParagraph = document.querySelector('.successParagraph');
+          successParagraph.classList.toggle('d-none');
+          loader.classList.toggle('d-none');
         }
-        else {
-          alert('there has been an error creating your account :(')
-        }
+        
       })
      } 
 
   else{
-    if(!upMail.checkValidity()){
-      alert('you should enter a valid email');
-    }
-    else {
-      alert('password must be at least 8 characters long');
-    }
-    
+    loader.classList.toggle('d-none');
+    const errorParagraph = document.querySelector('.errorParagraph');    
+    if(errorParagraph.classList.contains('d-none') === true){
+      errorParagraph.classList.toggle('d-none');
+    } 
     
   }
   

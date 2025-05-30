@@ -26,10 +26,16 @@
 
         <input class="signup-name-input" type="text" placeholder=" Enter Your Full Name ... ">
 
-        <input class="signup-email-input" type="email" size="30" required placeholder="Enter Your Email (gmail.com only) ...">
+        <input class="signup-email-input" type="email" size="30" required placeholder="Enter Your Email ...">
         <input class="signup-password-input" type="password" placeholder="  Password (8 characters minimum)">
-
-        <button class="sign-up-button mt-4">Sign Up</button>
+        <div class="mt-4 d-flex justify-content-center align-items-center">
+          <button class="sign-up-button me-2">Sign Up</button>
+          <div class="loader-container">
+            <div class="loader d-none"></div>
+          </div>
+        </div>
+        <span class="valid successParagraph text-center d-none">Account Created Successfully, Please Sign In to your account!</span>
+        <span class="not-valid errorParagraph text-center d-none">Error: This Account is Not Valid. </span>
         <p class="sign-in-paragraph text-center">Already have an account?, <a href="login.html" class="sign-up-button">Sign In </a></p>
 
 

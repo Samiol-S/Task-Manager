@@ -7,6 +7,14 @@ body{
   min-height:60px;
   height:15vh
 }
+.logout-button:hover{
+  color:white;
+  background-color: black;
+  border:solid;
+  border-color:white;
+  border-width:2px;
+  transition: border-color 0.3s,color 0.3s,border 0.3s, background-color 0.3s;
+}
 .logout-button{
   font-family: "El Messiri", sans-serif;
   font-weight:bold;
@@ -27,6 +35,9 @@ body{
   overflow-x: hidden;
   max-width:65%;
   max-height:40vh;
+}
+.js-input-todo:hover::placeholder {
+    transform: translateX(5px);
 }
 .js-input-todo{
   overflow:auto;
@@ -63,6 +74,14 @@ body{
 }
 #add-button-container{
   background-color: #1C1C1C;
+  overflow-y: hidden;
+  
+}
+#add-button:hover{
+  color:#9B9B9B;
+  transform: rotate(360deg);
+  padding-left:1rem;
+  transition:transform 1s;
 }
 #add-button{
   background-color: #1C1C1C;
@@ -141,13 +160,21 @@ body{
   background-color: rgb(70, 70, 70);
   
 }
+.delete-button:hover{
+  padding-top:0.2rem;
+  background-color: white;
+  color:#1C1C1C;
+  border-style:none;
+  transition: border-style 0.3s, background-color 0.3s, color 0.3s;
+}
 .delete-button{
+  transition: border-style 0.3s, background-color 0.3s, color 0.3s;
   background-color: #1C1C1C;
   color:#9B9B9B;
   border:solid;
   border-color: #9B9B9B;
   border-radius: 60px;
+  border-width:1px;
   width:2rem;
   height: 2rem;
-  padding-bottom: 1rem;
 }

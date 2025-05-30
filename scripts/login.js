@@ -9,6 +9,8 @@ if (userStatus === 'logged In') {
 const inMail = document.querySelector('.login-email-input');
 const inPass = document.querySelector('.login-password-input');
 function login () {
+  const loader = document.querySelector('.loader');
+  loader.classList.toggle('d-none');
   const email = inMail.value;
   const password = inPass.value;
 
@@ -37,6 +39,13 @@ function login () {
     }
     else{
       makeCookie('status','logged Out', 30);
+       const errorParagraph = document.querySelector('.errorParagraph');
+       if(errorParagraph.classList.contains('d-none')){
+        errorParagraph.classList.toggle('d-none');
+       }
+      
+      loader.classList.toggle('d-none');
+
     }
 
   })
