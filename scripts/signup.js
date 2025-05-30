@@ -31,7 +31,7 @@ function signUp() {
 
   else{
     if(!upMail.checkValidity()){
-      alert('only @gmail.com is accepted');
+      alert('you should enter a valid email');
     }
     else {
       alert('password must be at least 8 characters long');
