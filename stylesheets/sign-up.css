@@ -16,6 +16,16 @@ body{
   color:white;
   font-weight: bolder;
 }
+.signup-name-input:hover::placeholder{
+  transform: translateX(5px);
+}
+.signup-password-input:hover::placeholder{
+  transform: translateX(5px);
+}
+.signup-email-input:hover::placeholder{
+  transform: translateX(5px);
+}
+
 .signup-name-input,
 .signup-password-input,
 .signup-email-input{
@@ -30,6 +40,15 @@ body{
   padding:1rem;
   outline: none;
 }
+
+.sign-up-button:hover{
+  color:white;
+  background-color: black;
+  border:solid;
+  border-color:white;
+  border-width:2px;
+  transition: border-color 0.3s,color 0.3s,border 0.3s, background-color 0.3s;
+}
 .sign-up-button{
   width:6rem;
   height:2.5rem;
@@ -37,6 +56,13 @@ body{
 
   border:none;
   border-radius: 6px;
+}
+.sign-in-button:hover{
+  opacity: 0.8;
+}
+.sign-in-button{
+  color:#727EF9;
+  text-decoration: none;
 }
 .sign-in-paragraph{
   color:white;
