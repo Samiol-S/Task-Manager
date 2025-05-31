@@ -24,6 +24,10 @@ function signUp() {
       }).then((json) => {
         if (json.status === true) {
           const successParagraph = document.querySelector('.successParagraph');
+          const errorParagraph = document.querySelector('.errorParagraph');
+          if(!errorParagraph.classList.contains('d-none')){
+            errorParagraph.classList.toggle('d-none');
+          }
           successParagraph.classList.toggle('d-none');
           loader.classList.toggle('d-none');
         }
