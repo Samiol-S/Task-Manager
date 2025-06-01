@@ -44,80 +44,83 @@ function loadTasksFromServer() {
         console.log('finished')
 
       }).then(() => {
-
         console.log(todoList);
-        todoList.forEach(({taskID,checked}) => {
-          console.log(taskID);
-          
-
-          const checkElement = document.getElementById(`${taskID}`);
-          checkElement.addEventListener('click', () => {
-        
-            if (!checked) {
-              const patchRequest = fetch('https://sam-task-manager.srv656652.hstgr.cloud/tasks/' + taskID, {
-                method: "PATCH",
-                body: JSON.stringify({
-                  checked: true
-                }),
-                headers: {"Content-Type": "application/json","Authorization": `Bearer ${data}`}
-              })
-              patchRequest.then((response) => {
-                console.log('second!')
-                return response.json() ;
-              }).then((json) => {
-                console.log(json);
-                console.log('finished')
-                console.log(todoList);
-                return json;
-              }).then(() => {
-                todoList.map((object) => {
-                  if (object.taskID === `${taskID}`) {
-                    object.checked = true;
-                  }
-                });
-                console.log(todoList);
-
-
-
-                renderTodoList();
-
-              })
-            }
-            else if(checked){
-              const patchRequest = fetch('https://sam-task-manager.srv656652.hstgr.cloud/tasks/' + taskID, {
-                method: "PATCH",
-                body: JSON.stringify({
-                  checked: false
-                }),
-                headers: {"Content-Type": "application/json","Authorization": `Bearer ${data}`}
-              })
-              patchRequest.then((response) => {
-                console.log('second');
-                return response.json() ;
-              }).then((json) => {
-                console.log(json);
-                
-                console.log('finished')
-                console.log(todoList);
-                return json;
-              }).then(() => {
-                todoList.map((object) => {
-                  if (object.taskID === `${taskID}`) {
-                    object.checked= false;
-                  }
-                });
-                console.log(todoList);
-
-
-                renderTodoList();
-              })
-            }
-          })    
-        })
+        addEventListeners();
       })
     }
   
   
+}
+
+function addEventListeners() {
+todoList.forEach(({taskID,checked}) => {
+  console.log(taskID);
+  
+
+  const checkElement = document.getElementById(`${taskID}`);
+  checkElement.addEventListener('click', () => {
+
+    if (!checked) {
+      const patchRequest = fetch('https://sam-task-manager.srv656652.hstgr.cloud/tasks/' + taskID, {
+        method: "PATCH",
+        body: JSON.stringify({
+          checked: true
+        }),
+        headers: {"Content-Type": "application/json","Authorization": `Bearer ${data}`}
+      })
+      patchRequest.then((response) => {
+        console.log('second!')
+        return response.json() ;
+      }).then((json) => {
+        console.log(json);
+        console.log('finished')
+        console.log(todoList);
+        return json;
+      }).then(() => {
+        todoList.map((object) => {
+          if (object.taskID === `${taskID}`) {
+            object.checked = true;
+          }
+        });
+        console.log(todoList);
+
+
+
+        renderTodoList();
+
+      })
+    }
+    else if(checked){
+      const patchRequest = fetch('https://sam-task-manager.srv656652.hstgr.cloud/tasks/' + taskID, {
+        method: "PATCH",
+        body: JSON.stringify({
+          checked: false
+        }),
+        headers: {"Content-Type": "application/json","Authorization": `Bearer ${data}`}
+      })
+      patchRequest.then((response) => {
+        console.log('second');
+        return response.json() ;
+      }).then((json) => {
+        console.log(json);
+        
+        console.log('finished')
+        console.log(todoList);
+        return json;
+      }).then(() => {
+        todoList.map((object) => {
+          if (object.taskID === `${taskID}`) {
+            object.checked= false;
+          }
+        });
+        console.log(todoList);
+
+
+        renderTodoList();
+      })
+    }
+  })    
+})
 }
 
 
@@ -161,6 +164,8 @@ function renderTodoList() {
   })
   
   document.querySelector('.todo-container').innerHTML = todoListHTML;
+
+  addEventListeners();
 }
 
 
